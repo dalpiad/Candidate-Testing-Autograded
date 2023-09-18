@@ -3,11 +3,12 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName = "";
+
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "What is the answer to life, the universe, and everything?";
-let correctAnswer = 42;
-let candidateAnswer;
+let question = "Who was the first American woman in space? ";
+let correctAnswer = "Sally Ride";
+let candidateAnswer = "";
 
 
 //TODO: Variables for Part 2
@@ -30,9 +31,9 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   if(candidateAnswer == correctAnswer) {
-    console.log("Congratulations! I also like Douglas Adams");
+    console.log("Congratulations! You answered correctly.");
     } else {
-    console.log("Incorrect. See you in 7.5M years");
+    console.log("That answer was incorrect.");
   }
 
 
