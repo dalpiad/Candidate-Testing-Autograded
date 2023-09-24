@@ -38,17 +38,25 @@ function gradeQuiz(candidateAnswers) {
     console.log("That answer was incorrect.");
   }
 
+  let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  for (let i = 0; i < correctAnswers.length; i++) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      grade += (100/correctAnswers.length);
+    }
+  }
+  if (grade >= 80) {
+    console.log(`Congratulations! You passed the test.  Your overall score is ${grade}%.`)
+  } else {
+    console.log(`Unfortunetly you did not pass the test.  You scored ${grade}% and you needed at least 80% to pass.`)
+  }
   return grade;
 }
 
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello " + candidateName + "!\n" + "Are you ready to take a quiz?");
+   console.log("Hello " + candidateName + "!\n" + "Are you ready to take a quiz!!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
