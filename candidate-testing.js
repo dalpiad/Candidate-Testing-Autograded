@@ -30,13 +30,13 @@ function askQuestion() {
 }
 
 function gradeQuiz(candidateAnswers) {
-
+  console.log(`\n`);
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i = 0; i < questions.length; i++) {
-    if(candidateAnswers[i] == correctAnswers[i]) {
-      console.log(`Congratulations! ${candidateAnswers[i]} is the correct answer!`);
+    if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      console.log(`For question ${i+1}, correct. ${correctAnswers[i]} is the correct answer!`);
       } else {
-      console.log(`Unfortunetly you answered ${candidateAnswers[i]}, which is incorrect.  The correct answer was ${correctAnswers[i]}`);
+      console.log(`For question ${i+1}, incorrect. You answered ${candidateAnswers[i]}. The correct answer was ${correctAnswers[i]}`);
     }
   }
 
@@ -48,9 +48,9 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   if (grade >= 80) {
-    console.log(`Congratulations! You passed the test.  Your overall score is ${grade}%.`)
+    console.log(`\nCongratulations! You passed the test.  Your overall score is ${grade}%.`)
   } else {
-    console.log(`Unfortunetly you did not pass the test.  You scored ${grade}% and you needed at least 80% to pass.`)
+    console.log(`\nUnfortunetly you did not pass the test.  You scored ${grade}% and you needed at least 80% to pass.`)
   }
   return grade;
 }
@@ -58,7 +58,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello " + candidateName + "!\n" + "Are you ready to take a quiz!!");
+   console.log("Hello " + candidateName + "!\n" + "Are you ready to take a quiz!!\n");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
